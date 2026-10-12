@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Keeps the actions used in the workflow (checkout, setup-node, ...) up to date.
+  # Updates arrive as pull requests into develop, never straight into main.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "develop"
+    schedule:
+      interval: "weekly"

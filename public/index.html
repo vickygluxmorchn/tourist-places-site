@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover famous tourist places around the world: heritage sites, beaches, mountains and more." />
+  <title>Wanderly - Tourist Places Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <span class="logo">🧭 Wanderly</span>
+      <span class="api-status">API: <span id="api-status">checking...</span></span>
+    </nav>
+    <div class="hero-text">
+      <h1>Find your next destination</h1>
+      <p>Explore famous tourist places, check the best time to visit, and save your favourites.</p>
+      <label class="search">
+        <span class="sr-only">Search places</span>
+        <input id="search" type="search" placeholder="Search by place, country or highlight..." autocomplete="off" />
+      </label>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-label="Filters">
+      <div id="chips" class="chips" role="group" aria-label="Category"></div>
+      <div class="controls-right">
+        <label class="select">
+          Sort by
+          <select id="sort">
+            <option value="rating">Top rated</option>
+            <option value="name">Name (A-Z)</option>
+          </select>
+        </label>
+        <button id="fav-toggle" class="chip" type="button" aria-pressed="false">♥ Favourites</button>
+      </div>
+    </section>
+
+    <p id="result-count" class="result-count" aria-live="polite"></p>
+    <div id="message" class="message" role="status"></div>
+    <section id="grid" class="grid" aria-label="Tourist places"></section>
+  </main>
+
+  <dialog id="modal" class="modal" aria-labelledby="modal-title">
+    <div class="modal-banner" id="modal-banner"></div>
+    <div class="modal-body">
+      <button id="modal-close" class="modal-close" type="button" aria-label="Close">&times;</button>
+      <h2 id="modal-title"></h2>
+      <p id="modal-meta" class="meta"></p>
+      <p id="modal-desc"></p>
+      <h3>Highlights</h3>
+      <ul id="modal-highlights"></ul>
+      <p><strong>Best time to visit:</strong> <span id="modal-best"></span></p>
+      <button id="modal-fav" class="fav-btn" type="button"></button>
+    </div>
+  </dialog>
+
+  <footer class="footer">
+    Built for a DevOps practice project &middot; Sample data &middot; Deployed with GitHub Actions and Vercel
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "tourist-places-site",
+  "version": "1.1.0",
+  "description": "Tourist places website with a serverless API, GitHub Actions CI/CD and Vercel hosting",
+  "private": true,
+  "scripts": {
+    "lint": "node scripts/lint.js",
+    "test": "node --test",
+    "build": "node scripts/build.js",
+    "test:integration": "node --test tests/integration/smoke.integration.js",
+    "start": "node scripts/dev-server.js",
+    "ci": "npm run lint && npm test && npm run build && npm run test:integration"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
